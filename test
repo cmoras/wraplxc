@@ -1,0 +1,19 @@
+#!/usr/local/bin/python3.7
+
+import argparse
+
+import os
+
+import sys
+
+#import gettext
+##will try translation this time as well. lets see
+
+
+
+
+
+
+
+
+
