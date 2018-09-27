@@ -27,8 +27,64 @@ except KeyError:
 print(f"{RED} testing ... {CYAN}")
 print(f"{NORMAL}")
 
+def help():
+    """Prints LLXC Usage"""
+    print (CYAN + "wrapLXC Linux Containers (wlxc) \n\nUsage:" + NORMAL)
+    print ("""    * wlxc enter containername
+    * wlxc exec containername
+    * wlxc status containername
+    * wlxc stop containername
+    * wlxc start containername
+    * wlxc create containername
+    * wlxc destroy containername
+    * wlxc updatesshkeys
+    * wlxc gensshkeys
+    """)
 
+def list():
+    """Provides a list of LXC Containers"""
+    print (CYAN + "  NAME \t\t TASKS \t STATUS \tIP_ADDR_ETH0" + NORMAL)
+    for VZ in "vzlist":
+        print ("  aptcache01 \t 12 \t RUNNING \t172.17.1.119")
 
+def status():
+   """Prints a status report for specified container"""
+   print (CYAN + """
+   Status report for container:  """ + "container" + NORMAL + """
+                   LXC Version:  %s
+                      LXC Host:  %s
+                    Disk Usage:  %s
+                  Memory Usage:  %s
+                    Swap Usage:  %s
+                    Swappiness:  %s
+        Autostart on host boot:  %s
+                 Current state:  %s
+             Running processes:  %s
+   """ % ('lxcversion', 'lxchost', 'diskusage', 'memusage', 'swap', \
+          'swappiness', 'autostart', 'state', 'runproc'))
+   print (CYAN + "    Tip: " + NORMAL + \
+          "'llxc status' is experimental and subject to behavioural change" )
+
+def stop():
+   """Stop LXC Container"""
+
+def start():
+   """Start LXC Container"""
+
+def toggleautostart():
+   """Toggle autostart of LXC Container"""
+   if fileexists:
+       print (containername + " is currently set to autostart")
+       print ("disabling autostart...")
+   else:
+       print (containername + " is not currently set to autostart")
+       print ("enabling autostart...")
+
+def create():
+   """Create LXC Container"""
+
+def destroy():
+   """Destroy LXC Container"""
 
 
 
